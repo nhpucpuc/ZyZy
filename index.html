@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ra là vại</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: pink;
+            font-family: 'Dancing Script', cursive;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container {
+            text-align: center;
+            color: #ff1493;
+            position: relative;
+            z-index: 1;
+        }
+
+        .container h1 {
+            font-size: 3rem;
+            margin: 0;
+            position: relative;
+            display: inline-block;
+        }
+
+        .heart {
+            color: red;
+            font-size: 5rem;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        .floating-hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .heart-shape {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            transform: rotate(45deg);
+            animation: float 4s linear infinite;
+        }
+
+        .heart-shape::before,
+        .heart-shape::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 50%;
+        }
+
+        .heart-shape::before {
+            top: -10px;
+            left: 0;
+        }
+
+        .heart-shape::after {
+            top: 0;
+            left: -10px;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100%) rotate(45deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-50%) rotate(45deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        /* Hearts around text */
+        .around-text {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .around-text .heart-shape {
+            animation: float 3s ease-in-out infinite;
+            opacity: 0.8;
+        }
+
+        .around-text .heart1 {
+            top: 30%;
+            left: 45%;
+        }
+
+        .around-text .heart2 {
+            top: 20%;
+            left: 55%;
+            animation-delay: 0.5s;
+        }
+
+        .around-text .heart3 {
+            top: 40%;
+            left: 35%;
+            animation-delay: 1s;
+        }
+
+        .around-text .heart4 {
+            top: 50%;
+            left: 65%;
+            animation-delay: 1.5s;
+        }
+
+        .around-text .heart5 {
+            top: 60%;
+            left: 50%;
+            animation-delay: 2s;
+        }
+
+        .around-text .heart6 {
+            top: 25%;
+            left: 40%;
+            animation-delay: 0.3s;
+        }
+
+        .around-text .heart7 {
+            top: 35%;
+            left: 60%;
+            animation-delay: 0.7s;
+        }
+
+        .around-text .heart8 {
+            top: 45%;
+            left: 30%;
+            animation-delay: 1.2s;
+        }
+
+        .around-text .heart9 {
+            top: 55%;
+            left: 70%;
+            animation-delay: 1.8s;
+        }
+
+        .around-text .heart10 {
+            top: 65%;
+            left: 45%;
+            animation-delay: 2.3s;
+        }
+
+        .around-text .heart11 {
+            top: 15%;
+            left: 50%;
+            animation-delay: 0.2s;
+        }
+
+        .around-text .heart12 {
+            top: 10%;
+            left: 40%;
+            animation-delay: 0.4s;
+        }
+
+        .around-text .heart13 {
+            top: 30%;
+            left: 60%;
+            animation-delay: 0.6s;
+        }
+
+        .around-text .heart14 {
+            top: 50%;
+            left: 20%;
+            animation-delay: 0.8s;
+        }
+
+        .around-text .heart15 {
+            top: 70%;
+            left: 30%;
+            animation-delay: 1s;
+        }
+
+        .around-text .heart16 {
+            top: 80%;
+            left: 40%;
+            animation-delay: 1.2s;
+        }
+
+        .around-text .heart17 {
+            top: 90%;
+            left: 50%;
+            animation-delay: 1.4s;
+        }
+
+        .around-text .heart18 {
+            top: 85%;
+            left: 70%;
+            animation-delay: 1.6s;
+        }
+
+        .around-text .heart19 {
+            top: 75%;
+            left: 80%;
+            animation-delay: 1.8s;
+        }
+
+        .around-text .heart20 {
+            top: 65%;
+            left: 90%;
+            animation-delay: 2s;
+        }
+
+        .around-text .heart21 {
+            top: 50%;
+            left: 10%;
+            animation-delay: 2.2s;
+        }
+
+        .around-text .heart22 {
+            top: 35%;
+            left: 15%;
+            animation-delay: 2.4s;
+        }
+
+        .around-text .heart23 {
+            top: 20%;
+            left: 25%;
+            animation-delay: 2.6s;
+        }
+
+        .around-text .heart24 {
+            top: 10%;
+            left: 30%;
+            animation-delay: 2.8s;
+        }
+
+        .around-text .heart25 {
+            top: 5%;
+            left: 40%;
+            animation-delay: 3s;
+        }
+
+        .around-text .heart26 {
+            top: 3%;
+            left: 50%;
+            animation-delay: 3.2s;
+        }
+
+        .around-text .heart27 {
+            top: 10%;
+            left: 70%;
+            animation-delay: 3.4s;
+        }
+
+        .around-text .heart28 {
+            top: 15%;
+            left: 85%;
+            animation-delay: 3.6s;
+        }
+
+        .around-text .heart29 {
+            top: 30%;
+            left: 90%;
+            animation-delay: 3.8s;
+        }
+
+        .around-text .heart30 {
+            top: 45%;
+            left: 85%;
+            animation-delay: 4s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>iu Tzyyyy nhất mò, tha cho anh iiii anh xin lõiiiii <span class="heart"></span></h1>
+    </div>
+    <div class="floating-hearts">
+        <div class="heart-shape" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="heart-shape" style="left: 30%; animation-delay: 0.5s;"></div>
+        <div class="heart-shape" style="left: 50%; animation-delay: 1s;"></div>
+        <div class="heart-shape" style="left: 70%; animation-delay: 1.5s;"></div>
+        <div class="heart-shape" style="left: 90%; animation-delay: 2s;"></div>
+    </div>
+    <div class="around-text">
+        <div class="heart-shape heart1"></div>
+        <div class="heart-shape heart2"></div>
+        <div class="heart-shape heart3"></div>
+        <div class="heart-shape heart4"></div>
+        <div class="heart-shape heart5"></div>
+        <div class="heart-shape heart6"></div>
+        <div class="heart-shape heart7"></div>
+        <div class="heart-shape heart8"></div>
+        <div class="heart-shape heart9"></div>
+        <div class="heart-shape heart10"></div>
+        <div class="heart-shape heart11"></div>
+        <div class="heart-shape heart12"></div>
+        <div class="heart-shape heart13"></div>
+        <div class="heart-shape heart14"></div>
+        <div class="heart-shape heart15"></div>
+        <div class="heart-shape heart16"></div>
+        <div class="heart-shape heart17"></div>
+        <div class="heart-shape heart18"></div>
+        <div class="heart-shape heart19"></div>
+        <div class="heart-shape heart20"></div>
+        <div class="heart-shape heart21"></div>
+        <div class="heart-shape heart22"></div>
+        <div class="heart-shape heart23"></div>
+        <div class="heart-shape heart24"></div>
+        <div class="heart-shape heart25"></div>
+        <div class="heart-shape heart26"></div>
+        <div class="heart-shape heart27"></div>
+        <div class="heart-shape heart28"></div>
+        <div class="heart-shape heart29"></div>
+        <div class="heart-shape heart30"></div>
+    </div>
+</body>
+</html>
